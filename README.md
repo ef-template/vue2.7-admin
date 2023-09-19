@@ -1,3 +1,48 @@
+# 项目简介
+一心堂后台通用模板（Vue2.7 + Element2 + TS）
+
+# 环境要求
+node >= 16.20
+
+# 包管理
+pnpm（如果未安装请先安装：npm install -g pnpm）
+
+# 安装依赖
+```bash
+pnpm i
+```
+
+# 启动项目
+```bash
+pnpm run dev
+```
+# 构建项目
+```bash
+pnpm run build
+```
+
+# git规范
+注意：每次写代码前务必执行 git pull 
+<br/>
+commit时请安装以下步骤执行
+1. git pull （如果出现冲突先执行git stash缓存本地代码，在git pull拉取代码，最后执行git stash pop弹出缓存并解决冲突文件后执行第2步骤）（或者借助vscode等编辑器处理冲突）
+2. git add .
+3. pnpm run commit 
+4. git push
+
+# Vue2.7说明
+本项目使用vue2.7版本，注意事项请参照官方文档[https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html)
+
+# Element-Ui
+
+# 路由与布局
+
+# 其他插件
+
+## prettier
+
+
+
 # The Last Naruto
 
 ![The Last Naruto Logo](./public/logo.webp)
