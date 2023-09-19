@@ -1,0 +1,61 @@
+{
+  "private": true,
+  "packageManager": "pnpm@8.6.12",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --port 8888 --open",
+    "lint": "eslint .",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "test": "vitest",
+    "up": "taze major -I",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.3.0",
+    "element-ui": "^2.15.14",
+    "vue": "2.7.14",
+    "vue-router": "3.6.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "@unocss/reset": "^0.55.0",
+    "@unocss/transformer-directives": "^0.55.0",
+    "@unocss/transformer-variant-group": "^0.55.0",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "@vue/test-utils": "^2.4.1",
+    "eslint": "^8.47.0",
+    "jsdom": "^22.1.0",
+    "pnpm": "^8.6.12",
+    "taze": "^0.11.2",
+    "terser": "^5.19.2",
+    "typescript": "^5.1.6",
+    "unocss": "^0.55.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.4.9",
+    "vite-plugin-pages": "^0.31.0",
+    "vite-plugin-vue-layouts": "^0.8.0",
+    "vitest": "^0.34.1",
+    "vue-demi": "^0.14.5",
+    "vue-tsc": "^1.8.8"
+  },
+  "nano-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,jsx,vue}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
