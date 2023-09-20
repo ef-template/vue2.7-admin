@@ -52,7 +52,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-components
     Components({
-      resolvers: [ElementUiResolver()],
+      resolvers: [ElementUiResolver({ importStyle: false })],
       dts: true,
       globs: ['src/components/**/!(_)*.vue'],
     }),

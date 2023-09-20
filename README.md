@@ -75,6 +75,24 @@ pnpm run build
 `-- vite.config.ts（vite配置）
 ```
 
+# 目录命名规范
+1. ts 类型定义文件统一命名“types”
+待补充
+
+# 文件命名规范
+待补充
+
+# 代码规范
+1. 变量名采用小驼峰
+待补充
+
+# Vue框架建议
+1. 注意响应式变量的使用，组件的 props 尽量保持稳定,v-for中尽量少访问响应式变量
+2. 减少大型不可变数据的响应性开销（ shallowRef() 和 shallowReactive()）
+3. 避免不必要的组件抽象（无渲染组件）
+4. 合理抽离组件（根据实际情况决定是否懒加载导入组件）
+待补充
+
 # git规范
 注意：每次写代码前先执行 git pull 
 <br/>
@@ -97,15 +115,15 @@ pnpm run build
 # 路由与布局
 本项目使用[vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages)与[vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)插件实现路由自动注册，配置详见vite.config.ts。
 <br/>
-<b>1. 页面自动注册说明：<b/>
+1. 页面自动注册说明：
 <br/>
-src/views目录或者任意子目录中的vue文件自动注册页面。（不包括components目录或任意子目录中的vue文件 && 不包括任意目录中“_”开始的vue文件）
+src/views目录或者任意子目录中的vue文件自动注册页面。（不包括components目录或任意子目录中的vue文件 && 不包括任意目录中"_"开始的vue文件）
 <br/>
-<b>2. 布局自动注册说明：<b/>
+2. 布局自动注册说明：
 <br/>
-src/layouts目录或者任意子目录中的vue文件自动注册布局。（不包括components目录或任意子目录中的vue文件 && 不包括任意目录中“_”开始的vue文件）
+src/layouts目录或者任意子目录中的vue文件自动注册布局。（不包括components目录或任意子目录中的vue文件 && 不包括任意目录中"_"开始的vue文件）
 <br/>
-<b>3. 页面布局说明：<b/>
+3. 页面布局说明：
 <br/>
 页面布局默认使用src/layouts/default.vue（可在vite.config.ts中修改默认值），页面中可使用\<route\>配置布局或其他信息，例如：
 ```vue
@@ -120,7 +138,7 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 
 # 组件自动注册插件
 本项目使用[unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)与[vite-plugin-components](https://github.com/antfu/vite-plugin-components)实现组件自动注册，配置详见vite.config.ts
-1. 'vue', 'vue/macros', 'vue-router', '@vueuse/core'已实现API自动注册，不需要使用import。
+1. 'vue', 'vue/macros', 'vue-router', '@vueuse/core'已实现API自动注册。
 2. element-ui组件库已实现自动注册。
 3. src/components目录或任意子目录下非"_"开始的vue组件已实现自动注册。
 
@@ -128,7 +146,7 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 本项目使用[UnoCss](https://github.com/antfu/unocss)作为样式解决方案，配置见unocss.config.ts
 
 # prettier
-本项目使用prettier作为代码格式化规范插件，配置见prettier.config.js。（请确保编辑器安装了prettier并使用其作为代码格式化插件）
+本项目使用prettier作为代码格式化规范插件，配置见prettier.config.js。（请确保编辑器安装了prettier并作为代码格式化插件）
 
 # 其他
 1. 本项目使用@vitejs/plugin-legacy插件支持IE11

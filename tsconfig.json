@@ -23,7 +23,8 @@
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
+      "@types/nprogress"
     ],
     "paths": {
       "@/*": [
@@ -34,8 +35,10 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
+    "./*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types/**/*.d.ts",
   ],
   "references": [
     {
@@ -44,5 +47,10 @@
   ],
   "vueCompilerOptions": {
     "target": 2.7
-  }
+  },
+  /** 编译器默认排除的编译文件 */
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
