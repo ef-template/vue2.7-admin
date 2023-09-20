@@ -26,8 +26,8 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       dirs: [{ dir: 'src/views', baseRoute: '' }],
-      exclude: ['**/components/**/*.vue'],
-      extensions: ['vue', 'ts', 'js'],
+      exclude: ['**/components/**/*.vue', '**/_*.vue'],
+      extensions: ['vue'],
       /**
       * Import routes directly or as async components
       * @default 'root index file => "sync", others => "async"'
@@ -39,14 +39,14 @@ export default defineConfig({
     Layouts({
       layoutsDir: 'src/layouts',
       defaultLayout: 'default',
-      exclude: ['**/components/**/*.vue'],
+      exclude: ['**/components/**/*.vue', '**/_*.vue'],
     }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
       dts: true,
-      dirs: ['./src/composables'],
+      // dirs: ['./src/composables/*.ts'], // TODO 未生效
       vueTemplate: true,
     }),
 
@@ -54,7 +54,7 @@ export default defineConfig({
     Components({
       resolvers: [ElementUiResolver()],
       dts: true,
-      globs: ['src/components/*.vue'],
+      globs: ['src/components/**/!(_)*.vue'],
     }),
 
     legacy({
