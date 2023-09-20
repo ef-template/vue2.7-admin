@@ -1,6 +1,11 @@
 <script setup lang="ts">
 // import { ref } from 'vue'
 import router from "@/router"
+import { Message } from "element-ui"
+
+onMounted(() => {
+  Message.success("test message")
+})
 
 const name = ref("")
 function go() {
