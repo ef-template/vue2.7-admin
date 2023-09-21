@@ -1,1 +1,1 @@
-export const isIE = 'ActiveXObject' in window
+export const isIE = "ActiveXObject" in window;

@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import { PiniaVuePlugin, createPinia } from 'pinia'
+import Vue from "vue";
+import { PiniaVuePlugin, createPinia } from "pinia";
 
-Vue.use(PiniaVuePlugin)
+Vue.use(PiniaVuePlugin);
 
-const store = createPinia()
+const store = createPinia();
 
-export default store
+export default store;

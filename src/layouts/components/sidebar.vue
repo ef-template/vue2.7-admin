@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { type Ref } from 'vue'
-import { type Route } from 'vue-router'
-import { useRoute } from '@/composables/vueApi'
+import { type Ref } from "vue"
+import { type Route } from "vue-router"
+import { useRoute } from "@/composables/vueApi"
 
 const route: Route = useRoute()
 
-const activeMenu: Ref<string> = ref<string>('')
+const activeMenu: Ref<string> = ref<string>("")
 
 function selectedMenu() {
   activeMenu.value = route.path
@@ -13,7 +13,7 @@ function selectedMenu() {
 
 watch(
   () => route.path,
-  (path) => {
+  (_path) => {
     selectedMenu()
   },
   // {

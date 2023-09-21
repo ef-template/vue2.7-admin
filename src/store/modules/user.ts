@@ -1,31 +1,31 @@
 // import { ref } from "vue"
-import { defineStore } from 'pinia'
-import store from '@/store'
+import { defineStore } from "pinia";
+import store from "@/store";
 
 
-export const useUserStore = defineStore('user', () => {
+export const useUserStore = defineStore("user", () => {
 
-  // TODO vue 2.7 组合式API在TS中的用法
-  const username = ref<string>('')
+    // TODO vue 2.7 组合式API在TS中的用法
+    const username = ref<string>("");
 
-  /** 获取用户详情 */
-  // const getInfo = async () => {
-  //   const { data } = await getUserInfoApi()
-  //   username.value = data.username
-  // }
+    /** 获取用户详情 */
+    // const getInfo = async () => {
+    //   const { data } = await getUserInfoApi()
+    //   username.value = data.username
+    // }
 
-  /**
+    /**
    * test
    */
-  const setUsername = (username: string) => {
-    username.value = username
-  }
+    const setUsername = (username: string) => {
+        username.value = username;
+    };
 
 
-  return { username, setUsername }
-})
+    return { username, setUsername };
+});
 
 /** 在 setup 外使用 */
 export function useUserStoreHook() {
-  return useUserStore(store)
+    return useUserStore(store);
 }

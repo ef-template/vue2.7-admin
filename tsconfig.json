@@ -25,9 +25,9 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "isolatedModules": true,
-    "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "skipLibCheck": true

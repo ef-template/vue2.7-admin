@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import router from '@/router'
+import router from '@/router';
 
 // import { Message } from "element-ui"
 
@@ -15,4 +15,6 @@ router.push({
 })
 </script>
 
-<template></template>
+<template>
+  <div />
+</template>
