@@ -10,6 +10,7 @@ const routes = setupLayouts(generatedRoutes)
 
 const router = new VueRouter({
   mode: 'history',
+  base: window.__POWERED_BY_QIANKUN__ ? '/vueAdmin/' : '/',
   routes,
 })
 
