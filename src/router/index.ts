@@ -9,19 +9,19 @@ Vue.use(VueRouter);
 const routes = setupLayouts(generatedRoutes);
 
 const router = new VueRouter({
-    mode: "history",
-    base: window.__POWERED_BY_QIANKUN__ ? "/vueAdmin/" : "/",
-    routes,
+  mode: "history",
+  base: window.__POWERED_BY_QIANKUN__ ? "/vueAdmin/" : "/",
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
-    NProgress.start();
-    next();
-    NProgress.done();
+  NProgress.start();
+  next();
+  NProgress.done();
 });
 
 router.afterEach(() => {
-    NProgress.done();
+  NProgress.done();
 });
 
 

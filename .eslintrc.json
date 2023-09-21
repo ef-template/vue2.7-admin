@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -14,33 +15,30 @@
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "vue"
-  ],
+  "plugins": ["@typescript-eslint", "vue"],
   "rules": {
-    "indent": [
-      "error",
-      4
-    ],
+    "indent": ["error", 2],
     "linebreak-style": [
       "error",
-      "windows"
+      "windows" // unix
     ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-unused-vars": [
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    // "no-unused-vars": [
+    //   "error",
+    //   {
+    //     "varsIgnorePattern": "^_"
+    //   }
+    // ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "varsIgnorePattern": "^_"
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
       }
     ],
+    // 允许使用any类型
     "@typescript-eslint/no-explicit-any": "off"
   }
 }
