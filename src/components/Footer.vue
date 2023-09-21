@@ -3,7 +3,7 @@ import { isDark, toggleDark } from '@/composables/dark'
 </script>
 
 <template>
-  <nav text-xl w-14 mx-auto mt-6 flex justify-between>
+  <nav mx-auto mt-6 w-14 flex justify-between text-xl>
     <button icon-btn @click="toggleDark()">
       <span>{{ isDark ? 'moon' : 'sun' }}</span>
     </button>

@@ -1,49 +1,49 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "incremental": false,
     "target": "ES6",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
     "lib": [
       "esnext",
       "dom"
     ],
-    "incremental": false,
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
       "@types/nprogress"
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true
   },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "./*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "types/**/*.d.ts",
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "types/**/*.d.ts"
   ],
   "vueCompilerOptions": {
     "target": 2.7

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div  class="h-100% w-100%" flex flex-items-center  flex-row-reverse>
+  <div class="h-100% w-100%" flex flex-row-reverse flex-items-center>
     <span>Header</span>
   </div>
 </template>

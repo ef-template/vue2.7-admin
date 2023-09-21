@@ -29,9 +29,9 @@ export default defineConfig({
       exclude: ['**/components/**/*.vue', '**/_*.vue'],
       extensions: ['vue'],
       /**
-      * Import routes directly or as async components
-      * @default 'root index file => "sync", others => "async"'
-      */
+       * Import routes directly or as async components
+       * @default 'root index file => "sync", others => "async"'
+       */
       // importMode: ImportMode | ImportModeResolver;
     }),
 

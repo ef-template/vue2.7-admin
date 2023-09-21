@@ -1,4 +1,4 @@
 interface Config {
-  themeColor: string,
-  baseURL: string,
+  themeColor: string
+  baseURL: string
 }

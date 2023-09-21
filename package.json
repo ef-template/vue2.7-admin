@@ -5,6 +5,7 @@
     "build": "vite build --mode production",
     "dev": "vite --port 8888 --open --mode development",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
@@ -22,10 +23,12 @@
     "vue-router": "3.6.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.43.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@types/lodash-es": "^4.17.9",
     "@types/nprogress": "^0.2.0",
+    "@unocss/eslint-config": "^0.56.0",
     "@unocss/reset": "^0.55.0",
     "@unocss/transformer-directives": "^0.55.0",
     "@unocss/transformer-variant-group": "^0.55.0",
@@ -39,8 +42,10 @@
     "cz-customizable": "^7.0.0",
     "eslint": "^8.47.0",
     "jsdom": "^22.1.0",
+    "lint-staged": "^14.0.1",
     "pnpm": "^8.6.12",
     "prettier": "^3.0.3",
+    "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
     "terser": "^5.19.2",
     "typescript": "^5.1.6",
@@ -54,10 +59,11 @@
     "vue-demi": "^0.14.5",
     "vue-tsc": "^1.8.8"
   },
-  "nano-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,jsx,vue}": "eslint --fix"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   },
   "config": {
     "commitizen": {

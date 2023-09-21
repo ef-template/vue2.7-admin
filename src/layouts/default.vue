@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Header from "./components/header.vue"
-import Sidebar from "./components/sidebar.vue"
+import Header from './components/header.vue'
+import Sidebar from './components/sidebar.vue'
 </script>
 
 <template>
-  <div class="w-100% h-100%" flex flex-col>
-    <div class="w-100% h-50px border-#eee" overflow-hidden border-b flex-shrink-0>
-      <Header></Header>
+  <div class="h-100% w-100%" flex flex-col>
+    <div class="h-50px w-100% border-#eee" flex-shrink-0 overflow-hidden border-b>
+      <Header />
     </div>
-    <div min-h-0 flex-auto flex>
-      <div class="w-200px h-100% border-#eee" border-r overflow-y-auto overflow-x-hidden flex-shrink-0>
-        <Sidebar></Sidebar>
+    <div min-h-0 flex flex-auto>
+      <div class="h-100% w-200px border-#eee" flex-shrink-0 overflow-x-hidden overflow-y-auto border-r>
+        <Sidebar />
       </div>
-      <div class="h-100%" flex-auto min-w-0 overflow-y-auto overflow-x-hidden p-10px>
+      <div class="h-100%" min-w-0 flex-auto overflow-x-hidden overflow-y-auto p-10px>
         <router-view />
       </div>
     </div>

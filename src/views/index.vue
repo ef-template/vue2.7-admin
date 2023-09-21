@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import router from "@/router"
+import router from '@/router'
+
 // import { Message } from "element-ui"
 
 // onMounted(() => {
@@ -10,7 +11,7 @@ import router from "@/router"
  * 设置默认页面
  */
 router.push({
-  path: "/test/button"
+  path: '/test/button',
 })
 </script>
 
