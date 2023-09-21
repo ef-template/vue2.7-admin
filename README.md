@@ -106,7 +106,7 @@ pnpm run build
 本项目使用vue2.7版本，注意事项请参照官方文档[https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html)
 
 # Element-Ui
-本项目使用element-ui组件库,组件文档：[https://element.eleme.cn/2.0/#/zh-CN](https://element.eleme.cn/2.0/#/zh-CN)
+本项目使用element-ui组件库,组件文档：[https://element.eleme.cn/#/zh-CN](https://element.eleme.cn/#/zh-CN)
 <br/>
 已使用[vite-plugin-components](https://github.com/antfu/vite-plugin-components)实现组件自动导入，不需使用import导入。
 <br/>

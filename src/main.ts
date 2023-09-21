@@ -4,6 +4,7 @@ import router from '@/router'
 import '@unocss/reset/tailwind.css'
 import '@/styles/main.css'
 import '@/styles/element-ui/theme/index.css'
+import '@/styles/element-ui-reset.css'
 import 'uno.css'
 import pinia from "@/store";
 

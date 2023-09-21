@@ -1,0 +1,4 @@
+/* 解决菜单选中时menu item 背景色未设置问题 */
+.el-menu-item.is-active{
+  background-color: #e6f5ec;
+}

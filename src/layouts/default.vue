@@ -4,8 +4,16 @@ import Sidebar from "./components/sidebar.vue"
 </script>
 
 <template>
+
+  <!-- <div class="w-100% h-100%" flex flex-col>
+    <div class="w-100% h-50px">
+      <Header></Header>
+    </div>
+    <div min-h-0 flex-auto></div>
+  </div> -->
+
   <el-container direction="vertical" style="height: 100%; border: 1px solid #eee">
-    <el-header>
+    <el-header height="50px" style="border-bottom: 1px solid #eee;">
       <Header></Header>
     </el-header>
     <el-container>
