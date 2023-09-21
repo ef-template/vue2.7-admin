@@ -61,17 +61,10 @@
     "vue-tsc": "^1.8.8",
     "husky": "^8.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,ts,vue}": [
-      "pnpm run lint:fix",
-      "git add"
+      "eslint --fix",
+      "git add ."
     ]
   },
   "config": {
