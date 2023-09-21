@@ -4,15 +4,22 @@ import Sidebar from "./components/sidebar.vue"
 </script>
 
 <template>
-
-  <!-- <div class="w-100% h-100%" flex flex-col>
-    <div class="w-100% h-50px">
+  <div class="w-100% h-100%" flex flex-col>
+    <div class="w-100% h-50px border-#eee" overflow-hidden border-b flex-shrink-0>
       <Header></Header>
     </div>
-    <div min-h-0 flex-auto></div>
-  </div> -->
+    <div min-h-0 flex-auto flex>
+      <div class="w-200px h-100% border-#eee" border-r overflow-y-auto overflow-x-hidden flex-shrink-0>
+        <Sidebar></Sidebar>
+      </div>
+      <div class="h-100%" flex-auto min-w-0 overflow-y-auto overflow-x-hidden p-10px>
+        <router-view />
+      </div>
+    </div>
+  </div>
 
-  <el-container direction="vertical" style="height: 100%; border: 1px solid #eee">
+  <!-- element bug 有点多 -->
+  <!-- <el-container direction="vertical" style="height: 100%; border: 1px solid #eee">
     <el-header height="50px" style="border-bottom: 1px solid #eee;">
       <Header></Header>
     </el-header>
@@ -22,18 +29,6 @@ import Sidebar from "./components/sidebar.vue"
       </el-aside>
       <el-main><router-view /></el-main>
     </el-container>
-  </el-container>
+  </el-container> -->
 </template>
 
-
-<!-- <style>
-.el-header {
-  background-color: #b3c0d1;
-  color: #333;
-  line-height: 60px;
-}
-
-.el-aside {
-  color: #333;
-}
-</style> -->
