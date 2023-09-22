@@ -58,7 +58,7 @@ module.exports = {
   // 限制 subject 长度
   subjectLimit: 72,
   // 跳过问题 skip any questions you want
-  skipQuestions: ['body', 'breaking', 'footer'],
+  skipQuestions: ['scope', 'breaking', 'footer'],
   // breaklineChar: '|', // It is supported for fields body and footer.
   // footerPrefix : 'ISSUES CLOSED:'
   // askForBreakingChangeFirst : true, // default is false
