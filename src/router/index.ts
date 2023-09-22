@@ -8,10 +8,19 @@ Vue.use(VueRouter);
 
 const routes = setupLayouts(generatedRoutes);
 
+/**
+ * 设置默认路由
+ */
+routes.unshift({
+  path: "/",
+  redirect: "/test/button",
+});
+
+
 const router = new VueRouter({
   mode: "history",
   base: window.__POWERED_BY_QIANKUN__ ? "/vueAdmin/" : "/",
-  routes,
+  routes
 });
 
 router.beforeEach((to, from, next) => {

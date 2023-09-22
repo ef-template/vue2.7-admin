@@ -1,25 +1,24 @@
 // .cz-config.js
 module.exports = {
   types: [
-    { value: ":sparkles: feat", name: "✨ feat: 添加新功能" },
-    { value: ":bug: fix", name: "🐛 fix: 修复一个Bug" },
-    { value: ":memo: docs", name: "📝 docs: 文档变更" },
-    { value: ":lipstick: style", name: "💄 style: 代码风格，格式修复" },
+    { value: "feat", name: "✨ feat: 添加新功能" },
+    { value: "fix", name: "🐛 fix: 修复一个Bug" },
+    { value: "docs", name: "📝 docs: 文档变更" },
+    { value: "style", name: "💄 style: 代码风格，格式修复" },
     {
-      value: ":recycle: refactor",
+      value: "refactor",
       name: "♻️ refactor: 代码重构，注意和feat、fix区分开",
     },
-    { value: ":zap: perf", name: "⚡️ perf: 代码优化,改善性能" },
-    { value: ":white_check_mark: test", name: "✅ test: 测试用例修改" },
+    { value: "perf", name: "⚡️ perf: 代码优化,改善性能" },
+    { value: "test", name: "✅ test: 测试用例修改" },
     {
-      value: ":rocket: chore",
+      value: "chore",
       name: "🚀 chore: 改变构建流程、或者增加依赖库、工具等",
     },
-    { value: ":rewind: revert", name: "⏪️ revert: 代码回退" },
-    { value: ":tada: init", name: "🎉 init: 项目初始化" },
-    { value: ":construction_worker: ci", name: "👷 对CI配置文件和脚本的更改" },
-    { value: ":package: build", name: "📦️ build: 变更项目构建或外部依赖" },
-    { value: ":construction: WIP", name: "🚧 WIP: 进行中的工作" },
+    { value: "revert", name: "⏪️ revert: 代码回退" },
+    { value: "init", name: "🎉 init: 项目初始化" },
+    { value: "ci", name: "👷 ci: 对CI配置文件和脚本的更改" },
+    { value: "build", name: "📦️ build: 变更项目构建或外部依赖" },
   ],
   scopes: [
     { name: "component" },
@@ -27,7 +26,6 @@ module.exports = {
     { name: "docs" },
     { name: "src" },
     { name: "examples" },
-    { name: "play" },
   ],
   // allowTicketNumber: false,
   // isTicketNumberRequired: false,
@@ -60,7 +58,7 @@ module.exports = {
   // 限制 subject 长度
   subjectLimit: 72,
   // 跳过问题 skip any questions you want
-  // skipQuestions: ['body', 'footer'],
+  skipQuestions: ['body', 'breaking', 'footer'],
   // breaklineChar: '|', // It is supported for fields body and footer.
   // footerPrefix : 'ISSUES CLOSED:'
   // askForBreakingChangeFirst : true, // default is false
