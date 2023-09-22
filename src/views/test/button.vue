@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { Message } from 'element-ui'
-import router from '@/router'
+import { Message } from "element-ui";
+import router from "@/router";
 
 function testMessage() {
-  Message.success('test Message Components')
+  Message.success("test Message Components");
 }
 
 function toPage(path: string) {
   router.push({
     path,
-  })
+  });
 }
 </script>
 

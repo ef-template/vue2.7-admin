@@ -19,7 +19,7 @@ routes.unshift({
 
 const router = new VueRouter({
   mode: "history",
-  base: window.__POWERED_BY_QIANKUN__ ? "/vueAdmin/" : "/",
+  base: window.__POWERED_BY_QIANKUN__ ? "/myMicroAppName" : "/",
   routes
 });
 

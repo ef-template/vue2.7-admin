@@ -12,15 +12,29 @@ import Unocss from "unocss/vite";
 import transformerDirective from "@unocss/transformer-directives";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { ElementUiResolver } from "unplugin-vue-components/resolvers";
+import qiankun from "vite-plugin-qiankun";
+
+const useDevMode = true;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 8888,
+    cors: true,
+    hmr: true, // 热更新
+  },
+  // // qiankun 生产环境需要指定运行域名作为base （未验证） https://github.com/tengmaoqing/vite-plugin-qiankun
+  // base: "http://xxx.com/",
+  // base: "/",
   resolve: {
     alias: {
       "@/": `${path.resolve(__dirname, "src")}/`,
     },
   },
   plugins: [
+
+    qiankun("myMicroAppName", { useDevMode }),
+
     vue(),
 
     // https://github.com/hannoeru/vite-plugin-pages
