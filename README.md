@@ -124,7 +124,7 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 <route>
   {
     meta: {
-      layout: 'headless'
+      layout: 'empty'
     }
   }
 </route>

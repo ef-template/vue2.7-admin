@@ -8,7 +8,7 @@
 <route>
   {
     meta: {
-      layout: 'headless'
+      layout: 'empty'
     }
   }
 </route>
