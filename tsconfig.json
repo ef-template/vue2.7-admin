@@ -43,7 +43,8 @@
     "./*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
+    "vite.config.ts",
   ],
   "vueCompilerOptions": {
     "target": 2.7

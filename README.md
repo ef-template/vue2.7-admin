@@ -23,41 +23,35 @@ pnpm run build
 
 # 目录结构
 ```text
+|-- .husky（commit校验配置）
+|-- .vscode（vscode编辑器配置）
 |-- public
 |   |-- favicon.svg
 |   `-- logo.webp
 |-- src
+|   |-- api（接口）
 |   |-- components（组件）
-|   |   |-- Counter.vue
-|   |   |-- Footer.vue
-|   |   `-- README.md
 |   |-- composables（组合式API）
-|   |   |-- dark.ts
-|   |   `-- index.ts
+|   |-- config（配置文件入口）
+|   |-- enums（枚举）
 |   |-- layouts（布局）
-|   |   |-- default.vue
-|   |   `-- headless.vue
 |   |-- router（路由）
-|   |   `-- index.ts
 |   |-- styles（样式）
-|   |   `-- main.css
 |   |-- utils（工具）
-|   |   `-- index.ts
 |   |-- views（视图）
-|   |   |-- README.md
 |   |   |-- [...all].vue（404路由视图）
-|   |   `-- index.vue（默认路由视图）
 |   |-- App.vue（入口组件）
-|   |-- env.d.ts
 |   `-- main.ts（入口程序）
-|-- test
-|   `-- basic.test.ts
-|-- .commitlintrc.js
-|-- .cz-config.js（git commit 自定义配置）
+|-- test（测试目录）
+|-- types（ts全局类型）
+|-- .commitlintrc.js（commitlint配置）
+|-- .cz-config.js（ commit 自定义配置）
 |-- .editorconfig（编辑器配置）
+|-- .env.development（环境变量）
 |-- .env.development（开发环境变量）
 |-- .env.production（生成环境变量）
 |-- .eslintignore（eslint忽略文件）
+|-- .eslintrc.json（eslint配置文件）
 |-- .gitignore（git忽略文件）
 |-- .npmrc（npm行为配置文件）
 |-- .prettierignore（prettier忽略文件）
@@ -77,21 +71,21 @@ pnpm run build
 
 # 目录命名规范
 1. ts 类型定义文件统一命名“types”
-待补充
+<br/>待补充
 
 # 文件命名规范
-待补充
+<br/>待补充
 
 # 代码规范
 1. 变量名采用小驼峰
-待补充
+<br/>待补充
 
 # Vue框架建议
 1. 注意响应式变量的使用，组件的 props 尽量保持稳定,v-for中尽量少访问响应式变量
 2. 减少大型不可变数据的响应性开销（ shallowRef() 和 shallowReactive()）
 3. 避免不必要的组件抽象（无渲染组件）
 4. 合理抽离组件（根据实际情况决定是否懒加载导入组件）
-待补充
+<br/>待补充
 
 # git规范
 注意：每次写代码前先执行 git pull 
@@ -99,7 +93,7 @@ pnpm run build
 准备commit代码时请按照以下步骤执行
 1. git pull （如果出现冲突先执行git stash缓存本地代码，在git pull拉取代码，最后执行git stash pop弹出缓存并解决冲突文件后执行第2步骤）（或者借助vscode等编辑器处理冲突）
 2. git add .
-3. pnpm run commit 
+3. `pnpm run commit`
 4. git push
 
 # Vue2.7说明
@@ -144,9 +138,6 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 
 # UnoCSS
 本项目使用[UnoCss](https://github.com/antfu/unocss)作为样式解决方案，配置见unocss.config.ts
-
-# prettier
-本项目使用prettier作为代码格式化规范插件，配置见prettier.config.js。（请确保编辑器安装了prettier并作为代码格式化插件）
 
 # 其他
 1. 本项目使用@vitejs/plugin-legacy插件支持IE11
