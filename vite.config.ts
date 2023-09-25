@@ -33,6 +33,7 @@ export default defineConfig({
   },
   plugins: [
 
+    // https://github.com/tengmaoqing/vite-plugin-qiankun
     qiankun("myMicroAppName", { useDevMode }),
 
     vue(),

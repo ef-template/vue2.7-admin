@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import { setupLayouts } from "virtual:generated-layouts";
 import generatedRoutes from "virtual:generated-pages";
 import NProgress from "./nprogress-config";
+import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
 
 Vue.use(VueRouter);
 
@@ -19,7 +20,7 @@ routes.unshift({
 
 const router = new VueRouter({
   mode: "history",
-  base: window.__POWERED_BY_QIANKUN__ ? "/myMicroAppName" : "/",
+  base: qiankunWindow.__POWERED_BY_QIANKUN__ ? "/myMicroAppName" : "/",
   routes
 });
 
