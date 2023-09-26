@@ -8,7 +8,8 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-essential",
-    "@unocss"
+    "@unocss",
+    ".eslintrc-auto-import.json"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -20,7 +21,7 @@
     "indent": ["error", 2],
     "linebreak-style": [
       "error",
-      "unix" // unix windows
+      "windows" // unix windows
     ],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],

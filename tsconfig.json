@@ -44,7 +44,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "types/**/*.d.ts",
-    "vite.config.ts",
+    "vite.config.ts"
   ],
   "vueCompilerOptions": {
     "target": 2.7
@@ -52,6 +52,6 @@
   /** 编译器默认排除的编译文件 */
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
   ]
 }

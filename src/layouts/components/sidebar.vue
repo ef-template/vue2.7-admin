@@ -1,54 +1,46 @@
 <script setup lang="ts">
-import { type Ref } from "vue"
-import { type Route } from "vue-router"
-import { useRoute } from "@/composables/vueApi"
+import { type Ref } from "vue";
+import { type Route } from "vue-router";
+import { useRoute } from "@/composables/vueApi";
 
-const route: Route = useRoute()
+const route: Route = useRoute();
 
-const activeMenu: Ref<string> = ref<string>("")
+const activeMenu: Ref<string> = ref<string>("");
 
 function selectedMenu() {
-  activeMenu.value = route.path
+  activeMenu.value = route.path;
 }
 
 watch(
   () => route.path,
   (_path) => {
-    selectedMenu()
-  },
+    selectedMenu();
+  }
   // {
   //   immediate: true
   // }
-)
+);
 
 onMounted(() => {
-  selectedMenu()
-})
+  selectedMenu();
+});
 </script>
 
 <template>
-  <el-menu :default-openeds="['1', '2']" :router="true" :default-active="activeMenu">
+  <el-menu
+    :default-openeds="['1', '2']"
+    :router="true"
+    :default-active="activeMenu"
+  >
     <el-submenu index="1">
-      <template #title>
-        <i class="el-icon-message" />基本组件
-      </template>
-      <el-menu-item index="/test/button">
-        Button
-      </el-menu-item>
-      <el-menu-item index="/test/icon">
-        Icon
-      </el-menu-item>
+      <template #title> <i class="el-icon-message" />基本组件 </template>
+      <el-menu-item index="/test/button"> Button </el-menu-item>
+      <el-menu-item index="/test/icon"> Icon </el-menu-item>
     </el-submenu>
     <el-submenu index="2">
-      <template #title>
-        <i class="el-icon-message" />表单组件
-      </template>
-      <el-menu-item index="/test/form">
-        Form
-      </el-menu-item>
-      <el-menu-item index="/test/table">
-        Table
-      </el-menu-item>
+      <template #title> <i class="el-icon-message" />表单组件 </template>
+      <el-menu-item index="/test/form"> Form </el-menu-item>
+      <el-menu-item index="/test/table"> Table </el-menu-item>
     </el-submenu>
   </el-menu>
 </template>

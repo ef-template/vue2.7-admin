@@ -1,12 +1,13 @@
-// import { ref } from "vue"
+
 import { defineStore } from "pinia";
 import store from "@/store";
+import { type Ref } from "vue";
 
 
 export const useUserStore = defineStore("user", () => {
 
   // TODO vue 2.7 组合式API在TS中的用法
-  const username = ref<string>("");
+  const username: Ref<string> = ref<string>("");
 
   /** 获取用户详情 */
   // const getInfo = async () => {
