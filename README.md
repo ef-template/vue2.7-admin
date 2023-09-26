@@ -55,6 +55,7 @@ pnpm run build
 |-- .gitignore（git忽略文件）
 |-- .npmrc（npm行为配置文件）
 |-- .prettierignore（prettier忽略文件）
+|-- .prettierrc.js（prettier代码样式格式化插件配置）
 |-- README.md
 |-- auto-imports.d.ts（自动导入组件插件生成，不用关注）
 |-- commitlint.config.js（commitlint配置）
@@ -90,7 +91,7 @@ pnpm run build
 # git规范
 注意：每次写代码前先执行 git pull 
 <br/>
-准备commit代码时请按照以下步骤执行
+准备commit代码时建议按照以下步骤执行
 1. git pull （如果出现冲突先执行git stash缓存本地代码，在git pull拉取代码，最后执行git stash pop弹出缓存并解决冲突文件后执行第2步骤）（或者借助vscode等编辑器处理冲突）
 2. git add .
 3. `pnpm run commit`
@@ -138,6 +139,10 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 
 # UnoCSS
 本项目使用[UnoCss](https://github.com/antfu/unocss)作为样式解决方案，配置见unocss.config.ts
+
+# 代码质量检测与样式格式化规范
+本项目使用eslint与prettier，配置详见.prettierrc.js与.eslintrc.json
+> 编辑器建议使用vscode（保存文件会自动格式化，当然commit前也会自动修复，或者使用pnpm run lint:fix手动修复）
 
 # 其他
 1. 本项目使用@vitejs/plugin-legacy插件支持IE11

@@ -1,4 +1,3 @@
-
 export { useRoute, useRouter } from "vue-router/composables";
 
 /**

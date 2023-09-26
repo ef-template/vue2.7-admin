@@ -1,6 +1,6 @@
 {
-  "prettier.enable": false, // 关闭prettier，与eslint存在重叠
-  "eslint.enable": true, // 开启eslint检查
+  // "prettier.enable": false,
+  "eslint.enable": true,
   "vetur.validation.script": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {

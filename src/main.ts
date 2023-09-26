@@ -11,14 +11,13 @@ import { renderWithQiankun, qiankunWindow } from "vite-plugin-qiankun/dist/helpe
 
 Vue.config.productionTip = false;
 
-
 let instance = null;
 
 function render(_props = {}) {
   instance = new Vue({
     pinia,
     router,
-    render: h => h(App),
+    render: (h) => h(App),
   }).$mount("#app");
 }
 
@@ -35,9 +34,7 @@ renderWithQiankun({
     instance!.$el.innerHTML = "";
     instance = null;
   },
-  update(_props) {
-
-  },
+  update(_props) {},
 });
 
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
@@ -47,7 +44,6 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 // // 独立运行时
 // if (!window.__POWERED_BY_QIANKUN__)
 //   render();
-
 
 // //渲染之前
 // export async function bootstrap() {

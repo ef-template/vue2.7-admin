@@ -18,11 +18,10 @@ routes.unshift({
   redirect: "/test/button",
 });
 
-
 const router = new VueRouter({
   mode: "history",
   base: qiankunWindow.__POWERED_BY_QIANKUN__ ? "/" + CONFIG.microAppName : "/",
-  routes
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
@@ -34,6 +33,5 @@ router.beforeEach((to, from, next) => {
 router.afterEach(() => {
   NProgress.done();
 });
-
 
 export default router;

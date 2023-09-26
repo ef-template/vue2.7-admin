@@ -16,10 +16,8 @@ import { ElementUiResolver } from "unplugin-vue-components/resolvers";
 import qiankun from "vite-plugin-qiankun";
 // import { ViteEnv } from "./types/env";
 
-
 /** 配置项文档：https://cn.vitejs.dev/config */
 export default (configEnv: ConfigEnv): UserConfigExport => {
-
   const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ViteEnv;
   console.log({ viteEnv, NODE_ENV: process.env.NODE_ENV });
   // 对接qiankun，详见qiankun配置
@@ -49,9 +47,9 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         [viteEnv.VITE_BASE_SERVER_URL]: {
           target: viteEnv.VITE_BASE_SERVER_URL_PROXY, // easymock
           changeOrigin: true,
-          rewrite: path => path.replace(new RegExp("\\" + viteEnv.VITE_BASE_SERVER_URL), "")
-        }
-      }
+          rewrite: (path) => path.replace(new RegExp("\\" + viteEnv.VITE_BASE_SERVER_URL), ""),
+        },
+      },
     },
     // // qiankun 生产环境需要指定运行域名作为base （未验证） https://github.com/tengmaoqing/vite-plugin-qiankun
     // base: "http://xxx.com/",
@@ -62,7 +60,6 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       },
     },
     plugins: [
-
       // https://github.com/tengmaoqing/vite-plugin-qiankun
       qiankun(viteEnv.VITE_MICROAPPNAME, { useDevMode }),
 
