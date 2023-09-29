@@ -14,6 +14,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emmafgy/element-theme-css": "^1.0.1",
     "@vueuse/core": "^10.3.0",
     "axios": "^1.5.0",
     "element-ui": "^2.15.14",

@@ -1,4 +1,7 @@
 /* 解决菜单选中时menu item 背景色未设置问题 */
-.el-menu-item.is-active{
-  background-color: #e6f5ec;
+.el-menu-item.is-active {
+  background-color: var(
+    --menu-item-hover-fill,
+    var(--color-primary-light-9, color-mix(in srgb, var(--color-white, #fff) 90%, var(--color-primary, #409eff)))
+  );
 }

@@ -1,25 +1,16 @@
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
-      },
-    };
-  },
-  methods: {
-    onSubmit() {
-      // console.log('submit!')
-    },
-  },
-};
+<script setup lang="ts">
+const form = reactive({
+  name: "",
+  region: "",
+  date1: "",
+  date2: "",
+  delivery: false,
+  type: [],
+  resource: "",
+  desc: "",
+});
+
+const onSubmit = () => {};
 </script>
 
 <template>
@@ -35,23 +26,11 @@ export default {
     </el-form-item>
     <el-form-item label="活动时间">
       <el-col :span="11">
-        <el-date-picker
-          v-model="form.date1"
-          type="date"
-          placeholder="选择日期"
-          style="width: 100%"
-        />
+        <el-date-picker v-model="form.date1" type="date" placeholder="选择日期" style="width: 100%" />
       </el-col>
-      <el-col class="line" :span="2">
-        -
-      </el-col>
+      <el-col class="line" :span="2"> - </el-col>
       <el-col :span="11">
-        <el-time-picker
-          v-model="form.date2"
-          type="fixed-time"
-          placeholder="选择时间"
-          style="width: 100%"
-        />
+        <el-time-picker v-model="form.date2" type="fixed-time" placeholder="选择时间" style="width: 100%" />
       </el-col>
     </el-form-item>
     <el-form-item label="即时配送">
@@ -75,9 +54,7 @@ export default {
       <el-input v-model="form.desc" type="textarea" />
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">
-        立即创建
-      </el-button>
+      <el-button type="primary" @click="onSubmit"> 立即创建 </el-button>
       <el-button>取消</el-button>
     </el-form-item>
   </el-form>
