@@ -14,14 +14,21 @@ import transformerDirective from "@unocss/transformer-directives";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { ElementUiResolver } from "unplugin-vue-components/resolvers";
 import qiankun from "vite-plugin-qiankun";
+// Gzip压缩
+import compressPlugin from "vite-plugin-compression";
+// 构建产物分析
+import { visualizer } from "rollup-plugin-visualizer";
+// import manualChunks from "./.build/manualChunks";
+
 // import { ViteEnv } from "./types/env";
 
 /** 配置项文档：https://cn.vitejs.dev/config */
 export default (configEnv: ConfigEnv): UserConfigExport => {
   const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ViteEnv;
-  console.log({ viteEnv, NODE_ENV: process.env.NODE_ENV });
+  console.log({ configEnv, viteEnv, NODE_ENV: process.env.NODE_ENV });
   // 对接qiankun，详见qiankun配置
-  const useDevMode = process.env.NODE_ENV === "development";
+  const useDevMode = configEnv.mode === "development";
+  const isProd = configEnv.mode === "production";
 
   return {
     server: {
@@ -50,6 +57,23 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
           rewrite: (path) => path.replace(new RegExp("\\" + viteEnv.VITE_BASE_SERVER_URL), ""),
         },
       },
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          // manualChunks, // 还存在问题
+        },
+      },
+      // 生产环境移除console,debugger(需要先安装npm i -D terser),但是比Esbuild（默认）慢20-40倍，不建议
+      // minify: "terser",
+      // terserOptions: {
+      // 	compress: {
+      // 		drop_console: true,
+      // 		drop_debugger: true
+      // 	}
+      // },
+      // 启用/禁用 gzip 压缩大小报告,提高构建速度
+      reportCompressedSize: false,
     },
     // // qiankun 生产环境需要指定运行域名作为base （未验证） https://github.com/tengmaoqing/vite-plugin-qiankun
     // base: "http://xxx.com/",
@@ -115,6 +139,20 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       Unocss({
         transformers: [transformerVariantGroup(), transformerDirective()],
       }),
+      // gzip 压缩
+      isProd
+        ? compressPlugin({
+            //gzip静态资源压缩
+            verbose: true, // 默认即可
+            disable: false, //开启压缩(不禁用)，默认即可
+            deleteOriginFile: false, //删除源文件
+            threshold: 10240, //压缩前最小文件大小
+            algorithm: "gzip", //压缩算法
+            ext: ".gz", //文件类型
+          })
+        : null,
+      // 构建产物包大小分析
+      isProd ? visualizer() : null,
     ],
 
     // https://github.com/vitest-dev/vitest

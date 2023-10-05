@@ -34,12 +34,12 @@ const form = reactive({
   date1: "",
   date2: "",
   delivery: true,
-  type: ['即时配送'],
+  type: ["即时配送"],
   resource: "线上品牌商赞助",
   desc: "",
 });
 
-const color1 = ref('');
+const color1 = ref("");
 
 const onSubmit = () => {};
 
@@ -77,7 +77,7 @@ onMounted(() => {
   console.log({
     themeColor: getThemeColor(),
   });
-  color1.value = getThemeColor()
+  color1.value = getThemeColor();
 });
 </script>
 

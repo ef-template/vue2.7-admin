@@ -21,6 +21,12 @@ const tableData = ref([
     address: "上海市普陀区金沙江路 1516 弄",
   },
 ]);
+
+onMounted(() => {
+  console.log({
+    tableData: tableData.value,
+  });
+});
 </script>
 
 <template>
