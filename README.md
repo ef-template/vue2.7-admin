@@ -1,5 +1,5 @@
 # 项目简介
-一心堂后台通用模板（Vue2.7 + Element2 + Ts + Vite）
+后台通用模板（Vue2.7 + Element2 + Ts + Vite）
 
 # 环境要求
 node >= 16.20
